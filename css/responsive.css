@@ -1,0 +1,62 @@
+
+
+/*--------------------------------------------------------------------- File Name: responsive.css ---------------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------------- 991px x 768px ---------------------------------------------------------------------*/
+
+@media (min-width: 1200px) and (max-width: 1500px) {
+
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .text-bg h2 {
+        font-size: 42px;
+        padding-top: 63px;
+        line-height: 55px;
+    }
+    .text-bg span {
+        font-size: 45px;
+        line-height: 62px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .navigation.navbar-dark .navbar-nav .nav-link {
+        padding: 19px 10px;
+    }
+    .text-bg h2 {
+        font-size: 43px;
+        line-height: 39px;
+        padding-bottom: 18px;
+    }
+    .text-bg strong {
+        font-size: 50px;
+        line-height: 59px;
+    }
+    .padding_lert2 {
+        padding-right: 0;
+    }
+    .text-bg span {
+        font-size: 33px;
+        line-height: 45px;
+    }
+    .banner_main {
+        min-height: 600px;
+    }
+
+   .margin_boot {border:inherit;}
+    .titlepage h2 {
+        font-size: 31px;
+    }
+    
+    .classified_box {min-height: inherit;}
+    .classified .classified_box h3 {font-size: 17px;}
+    .classified .classified_box p {font-size: 16px;}
+    .cont h3 {
+        font-size: 28px;
+        line-height: 43px;
+    }
+    .footer {padding-top: 0;}
+}
+

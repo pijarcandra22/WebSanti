@@ -1,0 +1,430 @@
+
+
+/*--------------------------------------------------------------------- File Name: responsive.css ---------------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------------- File Name: style.css ---------------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------------- import Fonts ---------------------------------------------------------------------*/
+
+@import url('https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500,600,700&display=swap');
+
+/*****---------------------------------------- 1) font-family: 'Rajdhani', sans-serif;
+ 2) font-family: 'Poppins', sans-serif;
+ ----------------------------------------*****/
+
+
+/*--------------------------------------------------------------------- import Files ---------------------------------------------------------------------*/
+
+@import url(animate.min.css);
+@import url(normalize.css);
+@import url(icomoon.css);
+@import url(font-awesome.min.css);
+@import url(meanmenu.css);
+@import url(owl.carousel.min.css);
+@import url(swiper.min.css);
+@import url(slick.css);
+@import url(jquery.fancybox.min.css);
+@import url(jquery-ui.css);
+@import url(nice-select.css);
+
+/*--------------------------------------------------------------------- skeleton ---------------------------------------------------------------------*/
+
+* {
+     box-sizing: border-box !important;
+}
+
+html {
+     scroll-behavior: smooth;
+}
+
+body {
+     font-size: 14px;
+     font-family: 'Raleway', sans-serif;
+     line-height: 1.80857;
+     font-weight: normal;
+}
+
+/*--------------------------------------------------------------------- top banner area ---------------------------------------------------------------------*/
+
+/** banner section **/
+.navbar-nav {
+     padding: 8px 25px;
+     color: #fff;
+     font-size: 5px;
+     line-height: 20px;
+}
+
+ 
+.nav-link {
+     padding: 3px 10px;
+     color: #fff;
+     font-size: 5px;
+     line-height: 10px;
+} 
+
+.navbar-nav .nav-link:focus,
+.navbar-nav .nav-link:hover {
+     color: #DE2C62;
+}
+
+.navbar-nav .active>.nav-link,
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show,
+.navbar-nav .show>.nav-link {
+     color: #bb4f42;
+}
+
+.navbar-nav {
+     padding-right: 10px;
+}
+
+.padding_lert2 {
+     padding: 0;
+}
+
+.banner_main {
+     background:url(../images/banner.png);
+     padding: 50px 0 100px 0;
+     display: flex;
+     align-items: center;
+     background-repeat: no-repeat;
+     background-size: 100% 100%;
+     background-position: center;   
+}
+
+.text-bg {
+     text-align: left;
+     text-align: left;
+     max-width: 550px;
+     float: right;
+     width: 100%;
+}
+
+.text-bg h2 {
+     color: #df989d;
+     font-size: 45px;
+     padding-top: 150px;
+     line-height: 40px;
+     padding-bottom: 10px;
+     font-weight: bold;
+}
+
+.text-bg strong {
+     color: #fff;
+     font-size: 30px;
+     line-height: 60px;
+     font-weight: 600;
+     display: block; 
+}
+.text-bg p {
+     color: #fff;
+     font-size: 12px;
+     line-height: 10px;
+     font-weight: 100;
+     padding-top: 0;
+     padding-bottom: 30px;
+     display: block;
+}
+
+.text-img figure {
+     margin: 40px;
+}
+
+.text-img figure img {
+     width: 70%;
+}
+
+.text-bg a{
+     font-size: 17px;
+     background-color: transparent;
+     border:#ddd solid 2px;
+     border-radius: 20px;
+     color: #fff;
+     font-weight: 500;
+     padding: 13px 0px;
+     width: 100%;
+     max-width: 150px;
+     text-align: center;
+     display: inline-block;
+     transition: ease-in all 0.5s;
+     margin-right: 10px;
+}
+
+.text-bg a:hover {
+     background-color: #DE2C62;
+     color: #fff;
+     transition: ease-in all 0.5s;
+}
+/** banner section **/
+
+/** footer **/
+
+.copyright {
+     margin-top: 20px;
+     padding: 20px 0px;
+     background-color: transparent;
+}
+
+.copyright p {
+     color: #bcbdc3;
+     font-size: 18px;
+     line-height: 22px;
+     text-align: center;
+     border-top: #12153c solid 1px;
+     padding-top: 20px;
+}
+
+.copyright a {
+     color: #bcbdc3;
+}
+
+/** end footer **/
+
+/* Home */
+.banner_beranda {
+     background:url(../images/banner_1.png);
+     padding: 50px 0 100px 0;
+     display: flex;
+     align-items: center;
+     background-repeat: no-repeat;
+     background-size: 100% 100%;
+     background-position: center;   
+     }
+.navigation.navbar {
+     float: right;
+     padding-top: 15px !important;
+     padding: 0;
+}
+
+.navigation.navbar-dark .navbar-nav .nav-link {
+     padding: 0 20px;
+     color: #fff;
+     font-size: 17px;
+     line-height: 4px;
+     font-weight: 500;
+}
+
+.navigation.navbar-dark .navbar-nav .nav-link:focus,
+.navigation.navbar-dark .navbar-nav .nav-link:hover {
+     color: #f088a7;
+     text-decoration: underline !important;
+}
+
+.navigation.navbar-dark .navbar-nav .active>.nav-link,
+.navigation.navbar-dark .navbar-nav .nav-link.active,
+.navigation.navbar-dark .navbar-nav .nav-link.show,
+.navigation.navbar-dark .navbar-nav .show>.nav-link {
+     color: #f088a7;
+     text-decoration: underline !important;
+}
+
+.navbar-expand-md .navbar-nav {
+     padding-right: 30px;
+}
+
+.header {
+     width: 100%;
+     padding: 30px 30px;
+     background: transparent;
+     position: absolute;
+     z-index: 999;
+}
+
+.logo a {
+     line-height: 50px;
+     padding-left: 10px;
+}
+
+.text-beranda {
+     text-align: left;
+     padding-right: 71px;
+}
+
+.text-beranda h1 {
+     color: #fff;
+     line-height: 73px;
+     margin-top: 25%;
+     padding-bottom: 30px;
+     font-size: 40px;
+     font-weight: bold;
+     font-family: 'Baloo Chettan', cursive;
+}
+
+.text-beranda p {
+     color: #fff;
+     line-height: 28px;
+     margin-top: -20px;
+     font-weight: 500;
+     padding-bottom: 70px;
+     display: block;
+     font-size: 14px;
+     font-family: 'Baloo Chettan', cursive;
+}
+
+.text_img_beranda {
+     margin-right: -83px;
+}
+
+.text_img_beranda figure {
+     margin-top: 10%;
+}
+
+.text_img_beranda figure img {
+     width: 70%;
+     height: auto;
+}
+/** End Home**/
+
+/** Input Data**/
+.container-sm{
+     align-items:center;
+     width: 100%;
+     display: flex;
+     max-width: 43%;
+     background:#12153c;
+     border-radius: 20px;
+     box-shadow: 0 10px 15px rgb(0, 0, 0, 0, 1);
+     margin: auto;
+     margin-top: 14px;
+}
+
+.inputdata{
+     width: 100%;
+     padding: 20px;
+}
+
+.inputdata-bg h4{
+     margin: 20px;
+     text-align: center;
+     font-weight: bolder;
+     font-family:'Poppins', sans-serif;
+     /* font-family: 'Baloo Chettan', cursive; */
+     color: #fff;
+}
+
+hr{
+     border-top: 1px solid #fff;
+}
+
+.inputdata-bg label{
+     font-size: 14px;
+     color: #fff;
+     font-family: 'Baloo Chettan', cursive;
+}
+
+.inputdata-bg input{
+     width: 100%;
+     margin: 2px;
+     border: none;
+     outline: none;
+     padding: 4px;
+     border-radius: 5px;
+     border: 1px solid gray;
+}
+
+.textinput-bg {
+     text-align: left;
+     text-align: left;
+     max-width: 550px;
+     float: right;
+     width: 100%;
+}
+
+.textinput-bg a{
+     font-size: 17px;
+     background-color: transparent;
+     border:#ddd solid 2px;
+     border-radius: 20px;
+     color: #fff;
+     font-weight: 500;
+     padding: 13px 0px;
+     width: 100%;
+     max-width: 180px;
+     text-align: center;
+     display: inline-block;
+     transition: ease-in all 0.5s;
+}
+
+
+.textinput-bg a:hover {
+     background-color: #DE2C62;
+     color: #fff;
+     transition: ease-in all 0.5s;
+}
+
+.inputdata_btn {
+     padding: 3px 10px;
+     color: #fff;
+     font-size: 5px;
+     line-height: 10px;
+     }
+
+/** End Input Data**/
+
+/* Start Risk Result */
+
+.textrisk-bg {
+     text-align: left;
+     text-align: left;
+     max-width: 550px;
+     float: right;
+     width: 100%;
+}
+
+.textrisk-bg a{
+     font-size: 17px;
+     background-color: transparent;
+     border:#ddd solid 2px;
+     border-radius: 20px;
+     color: #fff;
+     font-weight: 500;
+     padding: 13px 0px;
+     width: 100%;
+     max-width: 150px;
+     text-align: center;
+     display: inline-block;
+     transition: ease-in all 0.5s;
+}
+
+.textrisk-bg a:hover {
+     background-color: #DE2C62;
+     color: #fff;
+     transition: ease-in all 0.5s;
+}
+
+.riskdata_btn {
+     padding: 3px 10px;
+     color: #fff;
+     font-size: 5px;
+     line-height: 10px;
+     }
+
+/** End Risk Result**/
+
+/* start patient data */
+.container-save{
+     align-items:center;
+     width: 100%;
+     display: flex;
+     max-width: 50%;
+     background:#12153c;
+     border-radius: 20px;
+     box-shadow: 0 10px 15px rgb(0, 0, 0, 0, 1);
+     margin: auto;
+}
+
+.allpatientdata h4{
+text-align: center;
+font-weight: bold;
+font-family:'Poppins', sans-serif;
+padding: 20px;
+}
+
+.eyes a{
+     padding-left: 580px;
+}
+/** end patient data **/
