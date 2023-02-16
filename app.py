@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, url_for, redirect,session
+from py import FuzzyKNN
 
 app = Flask(__name__)
 app = Flask(__name__,template_folder='temp')
