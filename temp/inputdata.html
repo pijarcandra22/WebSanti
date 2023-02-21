@@ -82,56 +82,56 @@
 <!-- Input Data -->
 <div class="container-sm">
    <div class="inputdata">
-       <from action="" id="dataSubmit">
+      <form action="" id="dataSubmit">
          <div class="inputdata-bg">
             <h4>Input Data</h4>
             <hr>
             <div class="row mb-3">
                <label for="inputage" class="col-md-5 col-form-label">Umur</label>
                <div class="col-sm-7">
-                 <input type="age" class="form-control" id="inputage">
+                 <input name="age" type="text" class="form-control" id="inputage">
                </div>
             </div>
             <div class="row mb-3">
                <label for="inputbg" class="col-sm-5 col-form-label">Tinggi Badan</label>
                <div class="col-sm-7">
-                 <input type="bg" class="form-control" id="inputh">
+                 <input name="bg" type="text" class="form-control" id="inputh">
                </div>
             </div>
             <div class="row mb-3">
                <label for="inputbg" class="col-sm-5 col-form-label">Berat Badan</label>
                <div class="col-sm-7">
-                 <input type="bg" class="form-control" id="inputw">
+                 <input name="bg" type="text" class="form-control" id="inputw">
                </div>
             </div>
             <div class="row mb-3">
                <label for="inputbg" class="col-sm-5 col-form-label">LILA</label>
                <div class="col-sm-7">
-                 <input type="bg" class="form-control" id="inputl">
+                 <input name="bg" type="text" class="form-control" id="inputl">
                </div>
             </div>
             <div class="row mb-3">
                <label for="inputsbp" class="col-md-5 col-form-label">Tekanan Darah Sistolik</label>
                <div class="col-sm-7">
-                 <input type="sbp" class="form-control" id="inputsbp">
+                 <input name="sbp" type="text" class="form-control" id="inputsbp">
                </div>
             </div>
             <div class="row mb-3">
                <label for="inputdbp" class="col-sm-5 col-form-label">Tekanan Darah Diastolik</label>
                <div class="col-sm-7">
-                 <input type="dbp" class="form-control" id="inputdbp">
+                 <input name="dbp" type="text" class="form-control" id="inputdbp">
                </div>
             </div>
          </div>
-            <div class="textinput-bg">
+         <div class="textinput-bg">
                <!-- <div class="d-grid gap-2 col-5 mx-auto">
                   <button class="inputdata_btn me-md-2" type="button">Cek Risk Level</button>
                 </div> -->
                <div class="d-grid gap-2 col-5 mx-auto">
-                  <button id="submitData" class="inputdata_btn" href="riskresult">Cek Tingkat Risiko</button>
+                  <button id="submitData" class="inputdata_btn" type="button">Cek Tingkat Risiko</button>
                </div>   
-            </div>
-       </from>
+         </div>
+      </form>
    </div>
 </div>
 <!-- End Input Data -->
@@ -152,13 +152,19 @@
 </footer>
 <!-- end footer -->
 
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>  
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <script>
 $( document ).ready(function() {
   $('#submitData').click(function() {
+   console.log($("#dataSubmit").serialize())
+
     $.ajax({
         type: "POST",
         data: $("#dataSubmit").serialize(),
-        url: "/cbr",
+        url: "/fknn",
         success: function(data)
         {   
           dsplit = data.split("_")
