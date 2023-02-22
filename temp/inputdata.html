@@ -95,31 +95,31 @@
             <div class="row mb-3">
                <label for="inputbg" class="col-sm-5 col-form-label">Tinggi Badan</label>
                <div class="col-sm-7">
-                 <input name="bg" type="text" class="form-control" id="inputh">
+                 <input name="tb" type="text" class="form-control" id="inputh">
                </div>
             </div>
             <div class="row mb-3">
                <label for="inputbg" class="col-sm-5 col-form-label">Berat Badan</label>
                <div class="col-sm-7">
-                 <input name="bg" type="text" class="form-control" id="inputw">
+                 <input name="bb" type="text" class="form-control" id="inputw">
                </div>
             </div>
             <div class="row mb-3">
                <label for="inputbg" class="col-sm-5 col-form-label">LILA</label>
                <div class="col-sm-7">
-                 <input name="bg" type="text" class="form-control" id="inputl">
+                 <input name="lila" type="text" class="form-control" id="inputl">
                </div>
             </div>
             <div class="row mb-3">
                <label for="inputsbp" class="col-md-5 col-form-label">Tekanan Darah Sistolik</label>
                <div class="col-sm-7">
-                 <input name="sbp" type="text" class="form-control" id="inputsbp">
+                 <input name="tds" type="text" class="form-control" id="inputsbp">
                </div>
             </div>
             <div class="row mb-3">
                <label for="inputdbp" class="col-sm-5 col-form-label">Tekanan Darah Diastolik</label>
                <div class="col-sm-7">
-                 <input name="dbp" type="text" class="form-control" id="inputdbp">
+                 <input name="tdd" type="text" class="form-control" id="inputdbp">
                </div>
             </div>
          </div>
@@ -128,7 +128,7 @@
                   <button class="inputdata_btn me-md-2" type="button">Cek Risk Level</button>
                 </div> -->
                <div class="d-grid gap-2 col-5 mx-auto">
-                  <button id="submitData" class="inputdata_btn" type="button">Cek Tingkat Risiko</button>
+                  <button id="submitData" class="btn btn-primary" type="button">Cek Tingkat Risiko</button>
                </div>   
          </div>
       </form>
@@ -166,22 +166,20 @@ $( document ).ready(function() {
         data: $("#dataSubmit").serialize(),
         url: "/fknn",
         success: function(data)
-        {   
-          dsplit = data.split("_")
-          if(dsplit[0]=="1"){
+        {  
+          if(data=="0"){
             Swal.fire(
-              dsplit[2],
-              'DIPREDIKSI LULUS',
-              'success'
+               'Kondisi Kehamilan',
+              'BERESIKO',
+              'error'
             )
           }else{
             Swal.fire(
-              dsplit[2],
-              'DIPREDIKSI TIDAK LULUS',
-              'error'
+               'Kondisi Kehamilan',
+              'TIDAK BERESIKO',
+              'success'
             )
           }
-          myModal.show()
         }
     });
   })

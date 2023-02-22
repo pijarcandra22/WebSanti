@@ -1,12 +1,17 @@
 from flask import Flask, render_template, request, url_for, redirect, session
+from sklearn.preprocessing import MinMaxScaler, StandardScaler
 from py import FuzzyKNN
 import pickle
 import pandas as pd
+import numpy as np
 
 app = Flask(__name__)
 app = Flask(__name__, template_folder='temp')
 
-model = pickle.load(open("FKNNModel.pkl", 'rb'))
+scaler = StandardScaler()
+scaler.fit(pd.read_csv("DatasetTugasAkhir.csv").iloc[:, :-1].to_numpy())
+
+model = pickle.load(open("model2.sav", 'rb'))
 
 
 @app.route('/')
@@ -37,9 +42,15 @@ def riskresult():
 @app.route('/fknn', methods=['POST'])
 def fknn():
     data = request.form.to_dict(flat=False)
+    print(data['age'])
+
     data = pd.DataFrame.from_dict(data)
-    print(data.head())
-    return "s"
+    dt = scaler.transform(data.values)
+    data = pd.DataFrame(dt, columns=data.columns)
+
+    hasil = model.predict(data)
+    print(hasil)
+    return str(hasil[0])
 
 
 if __name__ == '__main__':
