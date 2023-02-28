@@ -82,6 +82,12 @@
 <!-- Patient Data -->
 <div class="allpatientdata">
 <h4> Data Pasien Ibu Hamil</h4>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+   <form class="d-flex">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-primary" type="submit">Search</button>
+    </form>
+</nav>
 <table class="table table-striped table-bordered">
    <thead>
      <tr>
@@ -96,26 +102,24 @@
      </tr>
    </thead>
    <tbody>
+      {%for data in range(hasil|length)%}
      <tr>
-       <th scope="row">1</th>
-       <td>Mark</td>
-       <td>Otto</td>
-       <td>@mdo</td>
-       <td>Otto</td>
-       <td>@mdo</td>
-       <td>@mdo</td>
-       <td>@mdo</td>
+       <th scope="row">{{data+1}}</th>
+       <td>{{hasil['Umur'][data]}}</td>
+       <td>{{hasil['TinggiBadan'][data]}}</td>
+       <td>{{hasil['BB'][data]}}</td>
+       <td>{{hasil['LILA'][data]}}</td>
+       <td>{{hasil['sistolik'][data]}}</td>
+       <td>{{hasil['diastolik'][data]}}</td>
+       <td>
+         {% if hasil['Risiko'][data]==1 %}
+            Berisiko
+         {% else %}
+            Tidak Berisiko
+         {% endif %}
+      </td>
      </tr>
-     <tr>
-       <th scope="row">2</th>
-       <td>Jacob</td>
-       <td>Thornton</td>
-       <td>@fat</td>
-       <td>Otto</td>
-       <td>@mdo</td>
-       <td>@mdo</td>
-       <td>@mdo</td>
-     </tr>
+     {%endfor%}
    </tbody>
  </table>
    <hr>

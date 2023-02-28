@@ -87,39 +87,57 @@
             <h4>Input Data</h4>
             <hr>
             <div class="row mb-3">
-               <label for="inputage" class="col-md-5 col-form-label">Umur</label>
+               <label for="inputage" class="col-md-5 col-form-label">Umur (tahun)</label>
                <div class="col-sm-7">
                  <input name="age" type="text" class="form-control" id="inputage">
+                 <div class="invalid-feedback">
+                  Hanya dapat menerima angka.
+                  </div>
                </div>
             </div>
             <div class="row mb-3">
-               <label for="inputbg" class="col-sm-5 col-form-label">Tinggi Badan</label>
+               <label for="inputbg" class="col-sm-5 col-form-label">Tinggi Badan (cm)</label>
                <div class="col-sm-7">
                  <input name="tb" type="text" class="form-control" id="inputh">
+                 <div class="invalid-feedback">
+                  Hanya dapat menerima angka.
+                  </div>
                </div>
             </div>
             <div class="row mb-3">
-               <label for="inputbg" class="col-sm-5 col-form-label">Berat Badan</label>
+               <label for="inputbg" class="col-sm-5 col-form-label">Berat Badan (kg)</label>
                <div class="col-sm-7">
                  <input name="bb" type="text" class="form-control" id="inputw">
+                 <div class="invalid-feedback">
+                  Hanya dapat menerima angka.
+                  </div>
                </div>
             </div>
             <div class="row mb-3">
-               <label for="inputbg" class="col-sm-5 col-form-label">LILA</label>
+               <label for="inputbg" class="col-sm-5 col-form-label">LILA (cm)</label>
                <div class="col-sm-7">
                  <input name="lila" type="text" class="form-control" id="inputl">
+                 <div class="invalid-feedback">
+                  Hanya dapat menerima angka.
+                  </div>
                </div>
             </div>
             <div class="row mb-3">
-               <label for="inputsbp" class="col-md-5 col-form-label">Tekanan Darah Sistolik</label>
+               <label for="inputsbp" class="col-md-5 col-form-label">Tekanan Darah Sistolik (mmHg)</label>
                <div class="col-sm-7">
                  <input name="tds" type="text" class="form-control" id="inputsbp">
+                 <div class="invalid-feedback">
+                  Hanya dapat menerima angka.
+                  </div>
                </div>
             </div>
             <div class="row mb-3">
-               <label for="inputdbp" class="col-sm-5 col-form-label">Tekanan Darah Diastolik</label>
+               <label for="inputdbp" class="col-sm-5 col-form-label">Tekanan Darah Diastolik (mmHg)</label>
                <div class="col-sm-7">
                  <input name="tdd" type="text" class="form-control" id="inputdbp">
+                 <div class="invalid-feedback">
+                  Hanya dapat menerima angka.
+                  </div>
                </div>
             </div>
          </div>
@@ -127,7 +145,7 @@
                <!-- <div class="d-grid gap-2 col-5 mx-auto">
                   <button class="inputdata_btn me-md-2" type="button">Cek Risk Level</button>
                 </div> -->
-               <div class="d-grid gap-2 col-5 mx-auto">
+               <div class="d-grid gap-2 col-4 mx-auto">
                   <button id="submitData" class="btn btn-primary" type="button">Cek Tingkat Risiko</button>
                </div>   
          </div>
@@ -158,7 +176,44 @@
 
 <script>
 $( document ).ready(function() {
-  $('#submitData').click(function() {
+  $('#submitData').click(function(){
+
+   falseinput=0
+   if(!$.isNumeric($("#inputage").val())){
+      $("#inputage").addClass("is-invalid")
+      falseinput++
+   }
+
+   if(!$.isNumeric($("#inputh").val())){
+      $("#inputh").addClass("is-invalid")
+      falseinput++
+   }
+
+   if(!$.isNumeric($("#inputw").val())){
+      $("#inputw").addClass("is-invalid")
+      falseinput++
+   }
+
+   if(!$.isNumeric($("#inputl").val())){
+      $("#inputl").addClass("is-invalid")
+      falseinput++
+   }
+
+   if(!$.isNumeric($("#inputsbp").val())){
+      $("#inputsbp").addClass("is-invalid")
+      falseinput++
+   }
+
+   if(!$.isNumeric($("#inputdbp").val())){
+      $("#inputdbp").addClass("is-invalid")
+      falseinput++
+   }
+
+   if(falseinput>0){
+      return
+   }
+
+
    console.log($("#dataSubmit").serialize())
 
     $.ajax({
